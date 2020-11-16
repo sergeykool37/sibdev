@@ -1,0 +1,7 @@
+FROM python:3
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /upload_proj
+WORKDIR /upload_proj
+ADD requirements.txt /upload_proj/
+RUN pip install -r requirements.txt
+ADD . /upload_proj

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+page
+{% endblock title %}
+
+{% block content %}
+     {% if richusers.count > 0 %}
+    <h2>Список богатых пользователей</h2>
+    <table>
+        <tr><th>Name</th><th>Total</th><th>Items</th></tr>
+        {% for richuser in richusers %}
+        <tr><td>{{ richuser.username }}</td><td>{{ richuser.spent_money }}</td><td>{{ richuser.gems }}</td></tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+{% endblock content %}
